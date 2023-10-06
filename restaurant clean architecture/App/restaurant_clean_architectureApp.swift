@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct restaurant_clean_architectureApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  let homePresenter = HomePresenter(homeUseCase: Injection.init().provideHome())
+  
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
+        .environmentObject(homePresenter)
     }
+  }
 }
