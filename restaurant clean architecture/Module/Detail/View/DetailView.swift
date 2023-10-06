@@ -41,10 +41,13 @@ extension DetailView {
     VStack(spacing: 16) {
       image
       cityAndRating
+      Divider()
       nameAndDesc
+      Divider()
       categories
       foods
       drinks
+      Spacer(minLength: 16)
     }
   }
   

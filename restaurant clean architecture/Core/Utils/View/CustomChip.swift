@@ -15,13 +15,13 @@ struct CustomChip: View {
     ZStack {
       RoundedRectangle(cornerRadius: 10)
         .fill(fgColor)
-        .frame(width: .infinity, height: 40)
       
       Text(text)
+        .font(.system(size: 14))
         .foregroundColor(Color.white)
         .padding()
     }
-    .padding(8)
+    .padding(4)
   }
 }
 
