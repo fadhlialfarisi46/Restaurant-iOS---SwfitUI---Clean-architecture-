@@ -52,6 +52,19 @@
             default = "YES">
          </TestPlanReference>
       </TestPlans>
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0639CABE2AD6F68200EE8CBF"
+               BuildableName = "restaurant clean architectureTests.xctest"
+               BlueprintName = "restaurant clean architectureTests"
+               ReferencedContainer = "container:restaurant clean architecture.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"

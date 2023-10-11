@@ -23,6 +23,7 @@
 		0639CAB42AD1181300EE8CBF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAB32AD1181300EE8CBF /* ProfileView.swift */; };
 		0639CAB62AD1232900EE8CBF /* CustomCardLinkProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAB52AD1232900EE8CBF /* CustomCardLinkProfile.swift */; };
 		0639CAB82AD6ED8800EE8CBF /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 0639CAB72AD6ED8800EE8CBF /* codemagic.yaml */; };
+		0639CAC22AD6F68200EE8CBF /* restaurant_clean_architectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAC12AD6F68200EE8CBF /* restaurant_clean_architectureTests.swift */; };
 		0669A6EE2ACAF5F7006D2C18 /* restaurant_clean_architectureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669A6ED2ACAF5F7006D2C18 /* restaurant_clean_architectureApp.swift */; };
 		0669A6F02ACAF5F7006D2C18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669A6EF2ACAF5F7006D2C18 /* ContentView.swift */; };
 		0669A6F22ACAF5F8006D2C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0669A6F12ACAF5F8006D2C18 /* Assets.xcassets */; };
@@ -47,6 +48,16 @@
 		0669A7342ACC4DB0006D2C18 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669A7332ACC4DB0006D2C18 /* BaseError.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0639CAC32AD6F68200EE8CBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0669A6E22ACAF5F7006D2C18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0669A6E92ACAF5F7006D2C18;
+			remoteInfo = "restaurant clean architecture";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0639CA8F2ACDA4C200EE8CBF /* DetailRestaurantResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRestaurantResponse.swift; sourceTree = "<group>"; };
 		0639CA912ACDA91E00EE8CBF /* DetailRestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRestaurantModel.swift; sourceTree = "<group>"; };
@@ -65,6 +76,8 @@
 		0639CAB52AD1232900EE8CBF /* CustomCardLinkProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardLinkProfile.swift; sourceTree = "<group>"; };
 		0639CAB72AD6ED8800EE8CBF /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
 		0639CAB92AD6F1EA00EE8CBF /* restaurant clean architecture.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = "restaurant clean architecture.xctestplan"; path = "../restaurant clean architecture.xctestplan"; sourceTree = "<group>"; };
+		0639CABF2AD6F68200EE8CBF /* restaurant clean architectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "restaurant clean architectureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0639CAC12AD6F68200EE8CBF /* restaurant_clean_architectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant_clean_architectureTests.swift; sourceTree = "<group>"; };
 		0669A6EA2ACAF5F7006D2C18 /* restaurant clean architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "restaurant clean architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0669A6ED2ACAF5F7006D2C18 /* restaurant_clean_architectureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant_clean_architectureApp.swift; sourceTree = "<group>"; };
 		0669A6EF2ACAF5F7006D2C18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +101,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0639CABC2AD6F68200EE8CBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0669A6E72ACAF5F7006D2C18 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,12 +206,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0639CAC02AD6F68200EE8CBF /* restaurant clean architectureTests */ = {
+			isa = PBXGroup;
+			children = (
+				0639CAC12AD6F68200EE8CBF /* restaurant_clean_architectureTests.swift */,
+			);
+			path = "restaurant clean architectureTests";
+			sourceTree = "<group>";
+		};
 		0669A6E12ACAF5F7006D2C18 = {
 			isa = PBXGroup;
 			children = (
 				0639CAB92AD6F1EA00EE8CBF /* restaurant clean architecture.xctestplan */,
 				0639CAB72AD6ED8800EE8CBF /* codemagic.yaml */,
 				0669A6EC2ACAF5F7006D2C18 /* restaurant clean architecture */,
+				0639CAC02AD6F68200EE8CBF /* restaurant clean architectureTests */,
 				0669A6EB2ACAF5F7006D2C18 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -200,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				0669A6EA2ACAF5F7006D2C18 /* restaurant clean architecture.app */,
+				0639CABF2AD6F68200EE8CBF /* restaurant clean architectureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -411,6 +441,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0639CABE2AD6F68200EE8CBF /* restaurant clean architectureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0639CAC52AD6F68200EE8CBF /* Build configuration list for PBXNativeTarget "restaurant clean architectureTests" */;
+			buildPhases = (
+				0639CABB2AD6F68200EE8CBF /* Sources */,
+				0639CABC2AD6F68200EE8CBF /* Frameworks */,
+				0639CABD2AD6F68200EE8CBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0639CAC42AD6F68200EE8CBF /* PBXTargetDependency */,
+			);
+			name = "restaurant clean architectureTests";
+			productName = "restaurant clean architectureTests";
+			productReference = 0639CABF2AD6F68200EE8CBF /* restaurant clean architectureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0669A6E92ACAF5F7006D2C18 /* restaurant clean architecture */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0669A6F82ACAF5F8006D2C18 /* Build configuration list for PBXNativeTarget "restaurant clean architecture" */;
@@ -446,6 +494,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					0639CABE2AD6F68200EE8CBF = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 0669A6E92ACAF5F7006D2C18;
+					};
 					0669A6E92ACAF5F7006D2C18 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -469,11 +521,19 @@
 			projectRoot = "";
 			targets = (
 				0669A6E92ACAF5F7006D2C18 /* restaurant clean architecture */,
+				0639CABE2AD6F68200EE8CBF /* restaurant clean architectureTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0639CABD2AD6F68200EE8CBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0669A6E82ACAF5F7006D2C18 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -487,6 +547,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0639CABB2AD6F68200EE8CBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0639CAC22AD6F68200EE8CBF /* restaurant_clean_architectureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0669A6E62ACAF5F7006D2C18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,7 +596,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0639CAC42AD6F68200EE8CBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0669A6E92ACAF5F7006D2C18 /* restaurant clean architecture */;
+			targetProxy = 0639CAC32AD6F68200EE8CBF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		0639CAC62AD6F68200EE8CBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.submission.restaurant-clean-architectureTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/restaurant clean architecture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/restaurant clean architecture";
+			};
+			name = Debug;
+		};
+		0639CAC72AD6F68200EE8CBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.submission.restaurant-clean-architectureTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/restaurant clean architecture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/restaurant clean architecture";
+			};
+			name = Release;
+		};
 		0669A6F62ACAF5F8006D2C18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -702,6 +812,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0639CAC52AD6F68200EE8CBF /* Build configuration list for PBXNativeTarget "restaurant clean architectureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0639CAC62AD6F68200EE8CBF /* Debug */,
+				0639CAC72AD6F68200EE8CBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0669A6E52ACAF5F7006D2C18 /* Build configuration list for PBXProject "restaurant clean architecture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
