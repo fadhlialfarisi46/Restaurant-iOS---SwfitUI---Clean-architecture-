@@ -30,7 +30,7 @@
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForTesting = "NO"
             buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
@@ -48,7 +48,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:../restaurant clean architecture.xctestplan"
+            reference = "container:restaurant clean architecture.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>

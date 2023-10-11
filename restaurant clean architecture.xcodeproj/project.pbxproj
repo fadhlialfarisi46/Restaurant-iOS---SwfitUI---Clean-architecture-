@@ -78,6 +78,7 @@
 		0639CAB92AD6F1EA00EE8CBF /* restaurant clean architecture.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = "restaurant clean architecture.xctestplan"; path = "../restaurant clean architecture.xctestplan"; sourceTree = "<group>"; };
 		0639CABF2AD6F68200EE8CBF /* restaurant clean architectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "restaurant clean architectureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0639CAC12AD6F68200EE8CBF /* restaurant_clean_architectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant_clean_architectureTests.swift; sourceTree = "<group>"; };
+		0639CAC82AD6F86300EE8CBF /* restaurant clean architecture.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = "restaurant clean architecture.xctestplan"; sourceTree = SOURCE_ROOT; };
 		0669A6EA2ACAF5F7006D2C18 /* restaurant clean architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "restaurant clean architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0669A6ED2ACAF5F7006D2C18 /* restaurant_clean_architectureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant_clean_architectureApp.swift; sourceTree = "<group>"; };
 		0669A6EF2ACAF5F7006D2C18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				0639CAC12AD6F68200EE8CBF /* restaurant_clean_architectureTests.swift */,
+				0639CAC82AD6F86300EE8CBF /* restaurant clean architecture.xctestplan */,
 			);
 			path = "restaurant clean architectureTests";
 			sourceTree = "<group>";
