@@ -12,7 +12,13 @@
 
   },
   "testTargets" : [
-
+    {
+      "target" : {
+        "containerPath" : "container:restaurant clean architecture.xcodeproj",
+        "identifier" : "0639CABE2AD6F68200EE8CBF",
+        "name" : "restaurant clean architectureTests"
+      }
+    }
   ],
   "version" : 1
 }
