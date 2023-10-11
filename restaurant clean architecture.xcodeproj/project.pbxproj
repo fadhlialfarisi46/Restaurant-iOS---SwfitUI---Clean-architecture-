@@ -64,6 +64,7 @@
 		0639CAB32AD1181300EE8CBF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0639CAB52AD1232900EE8CBF /* CustomCardLinkProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardLinkProfile.swift; sourceTree = "<group>"; };
 		0639CAB72AD6ED8800EE8CBF /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
+		0639CAB92AD6F1EA00EE8CBF /* restaurant clean architecture.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = "restaurant clean architecture.xctestplan"; path = "../restaurant clean architecture.xctestplan"; sourceTree = "<group>"; };
 		0669A6EA2ACAF5F7006D2C18 /* restaurant clean architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "restaurant clean architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0669A6ED2ACAF5F7006D2C18 /* restaurant_clean_architectureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant_clean_architectureApp.swift; sourceTree = "<group>"; };
 		0669A6EF2ACAF5F7006D2C18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 		0669A6E12ACAF5F7006D2C18 = {
 			isa = PBXGroup;
 			children = (
+				0639CAB92AD6F1EA00EE8CBF /* restaurant clean architecture.xctestplan */,
 				0639CAB72AD6ED8800EE8CBF /* codemagic.yaml */,
 				0669A6EC2ACAF5F7006D2C18 /* restaurant clean architecture */,
 				0669A6EB2ACAF5F7006D2C18 /* Products */,
