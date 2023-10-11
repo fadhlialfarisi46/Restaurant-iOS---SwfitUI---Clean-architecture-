@@ -14,13 +14,14 @@ class DetailPresenter: ObservableObject {
   private let detailUseCase: DetailUseCase
   
   @Published var detailRestaurant: DetailRestaurantModel?
+  @Published var restaurant: RestaurantModel?
   @Published var errorMessage: String = ""
   @Published var isLoading: Bool = false
   @Published var isError: Bool = false
   
   init(detailUseCase: DetailUseCase) {
     self.detailUseCase = detailUseCase
-//    detailRestaurant = detailUseCase.getDetailRestaurant()
+    restaurant = detailUseCase.getRestaurant()
   }
   
   func getDetailRestaurant() {
@@ -38,6 +39,22 @@ class DetailPresenter: ObservableObject {
         }
       }, receiveValue: { detailRestaurant in
         self.detailRestaurant = detailRestaurant
+      })
+      .store(in: &cancellables)
+  }
+  
+  func updateFavoriteRestaurant() {
+    detailUseCase.updateFavoriteRestaurant()
+      .receive(on: RunLoop.main)
+      .sink(receiveCompletion: { completion in
+        switch completion {
+          case .failure:
+            self.errorMessage = String(describing: completion)
+          case .finished:
+            self.isLoading = false
+        }
+      }, receiveValue: { restaurant in
+        self.restaurant = restaurant
       })
       .store(in: &cancellables)
   }

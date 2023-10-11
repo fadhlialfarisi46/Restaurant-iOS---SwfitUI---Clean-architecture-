@@ -9,39 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
   @EnvironmentObject var homePresenter: HomePresenter
+  @EnvironmentObject var favoritePresenter: FavoritePresenter
   
   var body: some View {
     TabView {
       NavigationStack {
-        HomeView(presenter: homePresenter)
-      }.tabItem {
-          Label("Home", systemImage: "house")
+        TabView {
+          HomeView(presenter: homePresenter)
+            .tabItem {
+              Label("Home", systemImage: "house")
+            }
+          
+          FavoriteView(presenter: favoritePresenter)
+            .tabItem {
+              Label("Favorite", systemImage: "star.fill")
+            }
+          
+          ProfileView()
+            .tabItem {
+              Label("My Profile", systemImage: "person")
+            }
         }
-      
-      NavigationStack {
-        
-      }.tabItem {
-        Label("Favorite", systemImage: "star.fill")
       }
-      
-      NavigationStack {
-        
-      }.tabItem {
-        Label("My Profile", systemImage: "person")
-      }
-      
-      //        NavigationStack {
-      //
-      //        }.tabItem {
-      //          UITabBarItem(title: "Favorite", image: UIImage(named: "star"), tag: 0)
-      //        }
-      //        NavigationStack {
-      //
-      //        }.tabItem {
-      //          UITabBarItem(title: "My Profile", image: UIImage(named: "house"), tag: 0)
-      //        }
-      //
-      
     }
   }
 }

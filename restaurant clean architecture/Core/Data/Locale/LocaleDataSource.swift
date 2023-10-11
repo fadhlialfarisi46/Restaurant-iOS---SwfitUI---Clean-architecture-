@@ -63,6 +63,40 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     }.eraseToAnyPublisher()
   }
   
+  func getFavoriteRestaurants() -> AnyPublisher<[RestaurantEntity], Error> {
+    return Future<[RestaurantEntity], Error> { completion in
+      if let realm = self.realm {
+        let restaurantEntities = {
+          realm.objects(RestaurantEntity.self)
+            .filter("isFavorite = \(true)")
+            .sorted(byKeyPath: "name", ascending: true)
+        }()
+        completion(.success(restaurantEntities.toArray(ofType: RestaurantEntity.self)))
+      } else {
+        completion(.failure(DatabaseError.invalidInstance))
+      }
+    }.eraseToAnyPublisher()
+  }
+  
+  func updateFavoriteRestaurant(by id: String) -> AnyPublisher<RestaurantEntity, Error> {
+    return Future<RestaurantEntity, Error> { completion in
+      if let realm = self.realm, let restaurantEntity = {
+        realm.objects(RestaurantEntity.self)
+          .filter("id = '\(id)'")
+      }().first {
+        do {
+          try realm.write {
+            restaurantEntity.setValue(!restaurantEntity.isFavorite, forKey: "favorite")
+          }
+          completion(.success(restaurantEntity))
+        } catch {
+          completion(.failure(DatabaseError.requestFailed))
+        }
+      } else {
+        completion(.failure(DatabaseError.invalidInstance))
+      }
+    }.eraseToAnyPublisher()
+  }
   
 }
 

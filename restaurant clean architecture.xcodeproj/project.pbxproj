@@ -16,6 +16,12 @@
 		0639CA9E2ACDB97300EE8CBF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CA9D2ACDB97300EE8CBF /* DetailView.swift */; };
 		0639CAA12ACFB43500EE8CBF /* CustomChipSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAA02ACFB43500EE8CBF /* CustomChipSection.swift */; };
 		0639CAA32ACFB5FC00EE8CBF /* CustomChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAA22ACFB5FC00EE8CBF /* CustomChip.swift */; };
+		0639CAA92AD03EBC00EE8CBF /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAA82AD03EBC00EE8CBF /* FavoriteRouter.swift */; };
+		0639CAAB2AD03ECA00EE8CBF /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAAA2AD03ECA00EE8CBF /* FavoritePresenter.swift */; };
+		0639CAAD2AD03ED500EE8CBF /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAAC2AD03ED500EE8CBF /* FavoriteView.swift */; };
+		0639CAAF2AD0447300EE8CBF /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAAE2AD0447300EE8CBF /* FavoriteInteractor.swift */; };
+		0639CAB42AD1181300EE8CBF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAB32AD1181300EE8CBF /* ProfileView.swift */; };
+		0639CAB62AD1232900EE8CBF /* CustomCardLinkProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAB52AD1232900EE8CBF /* CustomCardLinkProfile.swift */; };
 		0669A6EE2ACAF5F7006D2C18 /* restaurant_clean_architectureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669A6ED2ACAF5F7006D2C18 /* restaurant_clean_architectureApp.swift */; };
 		0669A6F02ACAF5F7006D2C18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669A6EF2ACAF5F7006D2C18 /* ContentView.swift */; };
 		0669A6F22ACAF5F8006D2C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0669A6F12ACAF5F8006D2C18 /* Assets.xcassets */; };
@@ -50,6 +56,12 @@
 		0639CA9D2ACDB97300EE8CBF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0639CAA02ACFB43500EE8CBF /* CustomChipSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChipSection.swift; sourceTree = "<group>"; };
 		0639CAA22ACFB5FC00EE8CBF /* CustomChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChip.swift; sourceTree = "<group>"; };
+		0639CAA82AD03EBC00EE8CBF /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
+		0639CAAA2AD03ECA00EE8CBF /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		0639CAAC2AD03ED500EE8CBF /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		0639CAAE2AD0447300EE8CBF /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
+		0639CAB32AD1181300EE8CBF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0639CAB52AD1232900EE8CBF /* CustomCardLinkProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardLinkProfile.swift; sourceTree = "<group>"; };
 		0669A6EA2ACAF5F7006D2C18 /* restaurant clean architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "restaurant clean architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0669A6ED2ACAF5F7006D2C18 /* restaurant_clean_architectureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant_clean_architectureApp.swift; sourceTree = "<group>"; };
 		0669A6EF2ACAF5F7006D2C18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +128,57 @@
 			children = (
 				0639CAA02ACFB43500EE8CBF /* CustomChipSection.swift */,
 				0639CAA22ACFB5FC00EE8CBF /* CustomChip.swift */,
+				0639CAB52AD1232900EE8CBF /* CustomCardLinkProfile.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0639CAA42AD03E7100EE8CBF /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				0639CAA72AD03E8F00EE8CBF /* Router */,
+				0639CAA62AD03E8700EE8CBF /* Presenter */,
+				0639CAA52AD03E7C00EE8CBF /* View */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		0639CAA52AD03E7C00EE8CBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0639CAAC2AD03ED500EE8CBF /* FavoriteView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0639CAA62AD03E8700EE8CBF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0639CAAA2AD03ECA00EE8CBF /* FavoritePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0639CAA72AD03E8F00EE8CBF /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0639CAA82AD03EBC00EE8CBF /* FavoriteRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		0639CAB02AD1179600EE8CBF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0639CAB22AD117AB00EE8CBF /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0639CAB22AD117AB00EE8CBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0639CAB32AD1181300EE8CBF /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +344,7 @@
 			children = (
 				0669A7232ACB9EC7006D2C18 /* HomeInteractor.swift */,
 				0639CA972ACDB2DB00EE8CBF /* DetailInteractor.swift */,
+				0639CAAE2AD0447300EE8CBF /* FavoriteInteractor.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -288,6 +352,8 @@
 		0669A7252ACB9F8E006D2C18 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				0639CAB02AD1179600EE8CBF /* Profile */,
+				0639CAA42AD03E7100EE8CBF /* Favorite */,
 				0639CA8B2ACDA31A00EE8CBF /* Detail */,
 				0669A7262ACB9F96006D2C18 /* Home */,
 			);
@@ -422,9 +488,11 @@
 				0669A70F2ACB05EF006D2C18 /* RestaurantsResponse.swift in Sources */,
 				0669A71B2ACB0B45006D2C18 /* RestaurantModel.swift in Sources */,
 				0669A7212ACB100D006D2C18 /* Injection.swift in Sources */,
+				0639CAAB2AD03ECA00EE8CBF /* FavoritePresenter.swift in Sources */,
 				0669A72F2ACBA0B9006D2C18 /* HomeView.swift in Sources */,
 				0669A7242ACB9EC7006D2C18 /* HomeInteractor.swift in Sources */,
 				0639CA922ACDA91E00EE8CBF /* DetailRestaurantModel.swift in Sources */,
+				0639CAB62AD1232900EE8CBF /* CustomCardLinkProfile.swift in Sources */,
 				0669A70B2ACB0178006D2C18 /* LocaleDataSource.swift in Sources */,
 				0639CAA32ACFB5FC00EE8CBF /* CustomChip.swift in Sources */,
 				0639CAA12ACFB43500EE8CBF /* CustomChipSection.swift in Sources */,
@@ -433,12 +501,16 @@
 				0669A7112ACB07B8006D2C18 /* RemoteDataSource.swift in Sources */,
 				0639CA902ACDA4C200EE8CBF /* DetailRestaurantResponse.swift in Sources */,
 				0669A7152ACB08B1006D2C18 /* APICall.swift in Sources */,
+				0639CAB42AD1181300EE8CBF /* ProfileView.swift in Sources */,
 				0639CA942ACDA9BE00EE8CBF /* CategoryModel.swift in Sources */,
 				0669A72D2ACB9FD7006D2C18 /* HomeRouter.swift in Sources */,
 				0639CA9A2ACDB41000EE8CBF /* DetailPresenter.swift in Sources */,
 				0669A72B2ACB9FCF006D2C18 /* HomePresenter.swift in Sources */,
 				0669A71E2ACB0CDF006D2C18 /* RestaurantMapper.swift in Sources */,
+				0639CAAD2AD03ED500EE8CBF /* FavoriteView.swift in Sources */,
 				0669A7172ACB0ADB006D2C18 /* RestaurantRepository.swift in Sources */,
+				0639CAA92AD03EBC00EE8CBF /* FavoriteRouter.swift in Sources */,
+				0639CAAF2AD0447300EE8CBF /* FavoriteInteractor.swift in Sources */,
 				0669A6EE2ACAF5F7006D2C18 /* restaurant_clean_architectureApp.swift in Sources */,
 				0639CA962ACDA9C900EE8CBF /* MenusModel.swift in Sources */,
 				0669A7312ACBA232006D2C18 /* RestaurantRow.swift in Sources */,

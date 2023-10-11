@@ -15,6 +15,7 @@ class RestaurantEntity: Object {
   @objc dynamic var pictureId: String = ""
   @objc dynamic var city: String = ""
   @objc dynamic var rating: Double = 0.0
+  @objc dynamic var isFavorite: Bool = false
   
   override class func primaryKey() -> String? {
     return "id"

@@ -29,8 +29,21 @@ final class RestaurantMapper {
       name: result.name,
       pictureId: result.pictureId,
       rating: result.rating,
-      city: result.city)
+      city: result.city,
+      isFavorite: result.isFavorite
+    )
   }
+  }
+  
+  static func mapRestaurantEntityToDomain(input restaurantEntity: RestaurantEntity) -> RestaurantModel {
+    return RestaurantModel(
+      id: restaurantEntity.id,
+      name: restaurantEntity.name,
+      pictureId: restaurantEntity.pictureId,
+      rating: restaurantEntity.rating,
+      city: restaurantEntity.city,
+      isFavorite: restaurantEntity.isFavorite
+    )
   }
   
   static func mapDetailRestaurantResponseToDomains(input result: DetailRestaurantResponse) ->

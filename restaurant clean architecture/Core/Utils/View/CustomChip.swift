@@ -21,7 +21,6 @@ struct CustomChip: View {
         .foregroundColor(Color.white)
         .padding()
     }
-    .padding(4)
   }
 }
 

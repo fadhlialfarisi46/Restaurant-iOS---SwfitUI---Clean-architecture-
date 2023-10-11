@@ -51,7 +51,7 @@ extension RestaurantRow {
         Label {
           Text(String(restaurant.city)).foregroundColor(Color.black)
         } icon: {
-          Image(systemName: "location").foregroundColor(Color.blue)
+          Image(systemName: "mappin.and.ellipse").foregroundColor(Color.blue)
         }
         Spacer()
         Label {

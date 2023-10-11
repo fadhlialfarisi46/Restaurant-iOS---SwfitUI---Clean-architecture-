@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailView: View {
   
   @ObservedObject var presenter: DetailPresenter
+  
   var baseImgUrl = "https://restaurant-api.dicoding.dev/images/medium/"
   
   var body: some View {
@@ -39,7 +40,8 @@ extension DetailView {
   
   var content: some View {
     VStack(spacing: 16) {
-      image
+      imageWithFavIcon
+      Spacer(minLength: 24)
       cityAndRating
       Divider()
       nameAndDesc
@@ -52,21 +54,52 @@ extension DetailView {
   }
   
   
-  var image: some View {
-    ZStack {
-      AsyncImage(url: URL(string:  baseImgUrl + (presenter.detailRestaurant?.pictureId ?? ""))) {image in
-        image.resizable()
-          .aspectRatio(contentMode: .fit)
+  var imageWithFavIcon: some View {
+      AsyncImage(url: URL(string:  baseImgUrl + (presenter.detailRestaurant?.pictureId ?? "14"))) { image in
+        ZStack(alignment: .bottomTrailing) {
+          image.resizable()
+            .scaledToFill()
+            .frame(width: UIScreen.main.bounds.width, height: 300)
+          
+          if presenter.restaurant?.isFavorite == true {
+            Circle()
+              .fill(Color.white)
+              .frame(width: 55, height: 55)
+              .overlay(
+                Image(systemName: "heart.fill")
+                  .font(.system(size: 40))
+                  .foregroundColor(.red)
+              )
+              .offset(x: -16, y: 25)
+              .onTapGesture {
+                self.presenter.updateFavoriteRestaurant()
+              }
+          } else {
+            Circle()
+              .fill(Color.white)
+              .frame(width: 55, height: 55)
+              .overlay(
+                Image(systemName: "heart")
+                  .font(.system(size: 40))
+                  .foregroundColor(.red)
+              )
+              .offset(x: -16, y: 25)
+              .onTapGesture {
+                self.presenter.updateFavoriteRestaurant()
+              }
+          }
+        
+        }
       } placeholder: {
         ProgressView()
-      }
-    }
+      }.frame(width: UIScreen.main.bounds.width, height: 324)
+
   }
   
   var cityAndRating: some View {
     HStack(spacing: 20) {
       VStack {
-        Image(systemName: "location").foregroundColor(Color.blue)
+        Image(systemName: "mappin.and.ellipse").foregroundColor(Color.blue)
         Spacer()
         Text(presenter.detailRestaurant?.city ?? "").foregroundColor(Color.black)
       }
@@ -114,10 +147,10 @@ extension DetailView {
   }
 }
 
-//struct DetailView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    let restaurant = RestaurantModel(id: "123", name: "ini restaurant", pictureId: "14", rating: 0.0, city: "Jakarta")
-//
-//    DetailView(presenter: DetailPresenter(detailUseCase: Injection.init().provideDetail(detailRestaurant: restaurant )))
-//  }
-//}
+struct DetailView_Previews: PreviewProvider {
+  static var previews: some View {
+    let restaurant = RestaurantModel(id: "123", name: "ini restaurant", pictureId: "14", rating: 0.0, city: "Jakarta")
+
+    DetailView(presenter: DetailPresenter(detailUseCase: Injection.init().provideDetail(detailRestaurant: restaurant )))
+  }
+}

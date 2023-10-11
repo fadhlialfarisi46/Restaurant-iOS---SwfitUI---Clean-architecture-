@@ -11,7 +11,9 @@ import Combine
 protocol RestaurantRepositoryProtocol {
   
   func getRestaurants() -> AnyPublisher<[RestaurantModel], Error>
+  func getFavoriteRestaurants() -> AnyPublisher<[RestaurantModel], Error>
   func getDetailRestaurant(by id: String) -> AnyPublisher<DetailRestaurantModel, Error>
+  func updateFavoriteRestaurant(by id: String) -> AnyPublisher<RestaurantModel, Error>
   
 }
 
@@ -35,9 +37,22 @@ final class RestaurantRepository: NSObject {
 
 extension RestaurantRepository: RestaurantRepositoryProtocol {
   
+  func updateFavoriteRestaurant(by id: String) -> AnyPublisher<RestaurantModel, Error> {
+    return self.locale.updateFavoriteRestaurant(by: id)
+      .map { RestaurantMapper.mapRestaurantEntityToDomain(input: $0) }
+      .eraseToAnyPublisher()
+  }
+  
+  func getFavoriteRestaurants() -> AnyPublisher<[RestaurantModel], Error> {
+    return self.locale.getFavoriteRestaurants()
+      .map { RestaurantMapper.mapRestaurantEntitiesToDomains(input: $0) }
+      .eraseToAnyPublisher()
+  }
+  
   func getRestaurants() -> AnyPublisher<[RestaurantModel], Error> {
     return self.locale.getRestaurants()
       .flatMap{ result -> AnyPublisher<[RestaurantModel], Error> in
+        print("result \(result)")
         if result.isEmpty {
           return self.remote.getRestaurants()
             .map { RestaurantMapper.mapRestaurantResponsesToEntities(input: $0)}

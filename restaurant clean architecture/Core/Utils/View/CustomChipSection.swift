@@ -15,14 +15,18 @@ struct CustomChipSection: View {
   var body: some View {
     VStack(alignment: .leading, spacing: 0) {
       Text(titleSection)
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 0))
       ScrollView(.horizontal, showsIndicators: false) {
         HStack {
+          Spacer(minLength: 16)
           ForEach(items, id: \.self) { item in
             CustomChip(text: item, fgColor: chipColor)
           }
+          Spacer(minLength: 8)
         }
       }
-    }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))    }
+    }
+  }
 }
 
 //struct CustomChipSection_Previews: PreviewProvider {

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 struct RestaurantModel: Equatable, Identifiable {
   
@@ -15,5 +14,6 @@ struct RestaurantModel: Equatable, Identifiable {
   let pictureId: String
   let rating: Double
   let city: String
+  var isFavorite: Bool = false
   
 }

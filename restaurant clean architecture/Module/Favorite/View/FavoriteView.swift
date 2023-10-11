@@ -1,15 +1,15 @@
 //
-//  HomeView.swift
+//  FavoriteView.swift
 //  restaurant clean architecture
 //
-//  Created by fadhlialfarisi on 03/10/23.
+//  Created by fadhlialfarisi on 06/10/23.
 //
 
 import SwiftUI
 
-struct HomeView: View {
+struct FavoriteView: View {
   
-  @ObservedObject var presenter: HomePresenter
+  @ObservedObject var presenter: FavoritePresenter
   
   var body: some View {
     ZStack {
@@ -18,22 +18,20 @@ struct HomeView: View {
       } else if presenter.isError {
         errorIndicator
       } else if presenter.restaurants.isEmpty {
-        emptyRestaurants
+        emptyCategories
       } else {
         content
       }
     }.onAppear {
-      if self.presenter.restaurants.count == 0 {
-        self.presenter.getRestaurants()
-      }
+      self.presenter.getFavoriteRestaurants()
     }.navigationBarTitle(
-      Text("Restaurants App"),
+      Text("Favorite Restaurants"),
       displayMode: .automatic
     )
   }
 }
 
-extension HomeView {
+extension FavoriteView {
   
   var loadingIndicator: some View {
     VStack {
@@ -42,7 +40,7 @@ extension HomeView {
     }
   }
   
-  var emptyRestaurants: some View {
+  var emptyCategories: some View {
     VStack {
       Image(systemName: "xmark.app")
         .font(.system(size: 100))
@@ -78,9 +76,8 @@ extension HomeView {
   }
 }
 
-
-struct HomeView_Previews: PreviewProvider {
-  static var previews: some View {
-    HomeView(presenter: HomePresenter(homeUseCase: Injection.init().provideHome()))
-  }
-}
+//struct FavoriteView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    FavoriteView()
+//  }
+//}

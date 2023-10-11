@@ -11,7 +11,9 @@ import Combine
 protocol DetailUseCase {
   
   func getDetailRestaurant() -> AnyPublisher<DetailRestaurantModel, Error>
-//  func getDetailRestaurant() -> RestaurantModel
+  func updateFavoriteRestaurant() -> AnyPublisher<RestaurantModel, Error>
+  func getRestaurant() -> RestaurantModel
+  
 }
 
 class DetailInteractor: DetailUseCase {
@@ -31,7 +33,12 @@ class DetailInteractor: DetailUseCase {
     return repository.getDetailRestaurant(by: restaurant.id)
   }
   
-//  func getDetailRestaurant() -> DetailRestaurantModel {
-//    return restaurant
-//  }
+  func updateFavoriteRestaurant() -> AnyPublisher<RestaurantModel, Error> {
+    return repository.updateFavoriteRestaurant(by: restaurant.id)
+  }
+  
+  func getRestaurant() -> RestaurantModel {
+    return restaurant
+  }
+  
 }

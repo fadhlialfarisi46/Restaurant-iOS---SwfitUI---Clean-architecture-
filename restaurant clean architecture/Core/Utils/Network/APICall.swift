@@ -24,7 +24,6 @@ enum EndPoints {
       switch self {
         case .restaurants: return "\(API.baseUrl)list"
         case .detailRestaurant: return "\(API.baseUrl)detail/"
-//        default: return "\(API.baseUrl)list"
       }
     }
   }
