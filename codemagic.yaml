@@ -8,9 +8,6 @@ workflows:
           XCODE_PROJECT: "restaurant clean architecture.xcodeproj"
           XCODE_SCHEME: "restaurant clean architecture"
     scripts:
-      - name: Pod install
-        script: |
-          pod install
       - name: Run tests
         script: |
           xcodebuild \
