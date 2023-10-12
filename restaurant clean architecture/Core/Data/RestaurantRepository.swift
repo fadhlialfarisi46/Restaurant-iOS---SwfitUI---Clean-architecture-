@@ -52,7 +52,6 @@ extension RestaurantRepository: RestaurantRepositoryProtocol {
   func getRestaurants() -> AnyPublisher<[RestaurantModel], Error> {
     return self.locale.getRestaurants()
       .flatMap{ result -> AnyPublisher<[RestaurantModel], Error> in
-        print("result \(result)")
         if result.isEmpty {
           return self.remote.getRestaurants()
             .map { RestaurantMapper.mapRestaurantResponsesToEntities(input: $0)}
