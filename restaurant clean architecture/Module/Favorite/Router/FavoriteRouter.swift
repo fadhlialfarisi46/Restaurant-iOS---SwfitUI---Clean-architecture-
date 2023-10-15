@@ -6,13 +6,31 @@
 //
 
 import SwiftUI
+import Restaurant
+import Core
 
 class FavoriteRouter {
   
-  func makeDetailView(for restaurant: RestaurantModel) -> some View {
-    let detailUseCase = Injection.init().provideDetail(detailRestaurant: restaurant)
-    let presenter = DetailPresenter(detailUseCase: detailUseCase)
-    return DetailView(presenter: presenter)
+  func makeDetailView(for restaurant: RestaurantDomainModel) -> some View {
+    
+    let detailUseCase: Interactor<
+      String,
+      DetailRestaurantModel,
+      GetDetailRestaurantRepository<
+        GetRestaurantByIdRemoteDataSource,
+        RestaurantTransformer
+      >> = Injection.init().provideDetail()
+    
+    let favoriteUseCase: Interactor<
+      String,
+      RestaurantDomainModel,
+      UpdateFavoriteRestaurantRepository<
+        GetFavoriteRestaurantsLocalDataSource,
+        RestaurantTransformer
+      >> = Injection.init().provideUpdateFavorite()
+    
+    let presenter = DetailPresenter(detailUseCase: detailUseCase, favoriteUseCase: favoriteUseCase)
+    return DetailView(presenter: presenter, restaurant: restaurant)
   }
   
 }

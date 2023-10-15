@@ -7,26 +7,37 @@
 
 import Foundation
 import Combine
+import Restaurant
+import Core
 
-class DetailPresenter: ObservableObject {
+class DetailPresenter<
+  DetailUseCase: UseCase,
+  FavoriteUseCase: UseCase
+>: ObservableObject  where
+DetailUseCase.Request == String,
+DetailUseCase.Response == DetailRestaurantModel,
+FavoriteUseCase.Request == String,
+FavoriteUseCase.Response == RestaurantDomainModel
+{
   
   private var cancellables: Set<AnyCancellable> = []
   private let detailUseCase: DetailUseCase
+  private let favoriteUseCase: FavoriteUseCase
   
+  @Published var restaurant: RestaurantDomainModel?
   @Published var detailRestaurant: DetailRestaurantModel?
-  @Published var restaurant: RestaurantModel?
   @Published var errorMessage: String = ""
   @Published var isLoading: Bool = false
   @Published var isError: Bool = false
   
-  init(detailUseCase: DetailUseCase) {
+  init(detailUseCase: DetailUseCase, favoriteUseCase: FavoriteUseCase) {
     self.detailUseCase = detailUseCase
-    restaurant = detailUseCase.getRestaurant()
+    self.favoriteUseCase = favoriteUseCase
   }
   
-  func getDetailRestaurant() {
+  func getDetailRestaurant(request: DetailUseCase.Request) {
     isLoading = true
-    detailUseCase.getDetailRestaurant()
+    detailUseCase.execute(request: request)
       .receive(on: RunLoop.main)
       .sink(receiveCompletion: { completion in
         switch completion {
@@ -43,8 +54,9 @@ class DetailPresenter: ObservableObject {
       .store(in: &cancellables)
   }
   
-  func updateFavoriteRestaurant() {
-    detailUseCase.updateFavoriteRestaurant()
+  func updateFavoriteRestaurant(request: FavoriteUseCase.Request) {
+    print("presenter called")
+    favoriteUseCase.execute(request: request)
       .receive(on: RunLoop.main)
       .sink(receiveCompletion: { completion in
         switch completion {
@@ -57,6 +69,10 @@ class DetailPresenter: ObservableObject {
         self.restaurant = restaurant
       })
       .store(in: &cancellables)
+  }
+  
+  func setInitRestaurant(restaurant: RestaurantDomainModel) {
+    self.restaurant = restaurant
   }
   
 }

@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import Core
+import Restaurant
 
 struct FavoriteView: View {
   
-  @ObservedObject var presenter: FavoritePresenter
+  @ObservedObject var presenter: GetListPresenter<
+    String,
+    RestaurantDomainModel, Interactor<String, [RestaurantDomainModel], GetFavoriteRestaurantsRepository<GetFavoriteRestaurantsLocalDataSource, RestaurantTransformer>>>
+  
   
   var body: some View {
     ZStack {
@@ -17,13 +22,13 @@ struct FavoriteView: View {
         loadingIndicator
       } else if presenter.isError {
         errorIndicator
-      } else if presenter.restaurants.isEmpty {
+      } else if presenter.list.isEmpty {
         emptyCategories
       } else {
         content
       }
     }.onAppear {
-      self.presenter.getFavoriteRestaurants()
+      self.presenter.getList(request: nil )
     }.navigationBarTitle(
       Text("Favorite Restaurants"),
       displayMode: .automatic
@@ -61,10 +66,10 @@ extension FavoriteView {
   var content: some View {
     ScrollView(.vertical, showsIndicators: false) {
       ForEach(
-        self.presenter.restaurants,
+        self.presenter.list,
         id: \.id
       ) { restaurant in
-        self.presenter.linkBuilder(for: restaurant) {
+        linkBuilder(for: restaurant) {
           VStack {
             RestaurantRow(restaurant: restaurant)
             Spacer()
@@ -74,10 +79,13 @@ extension FavoriteView {
       }
     }
   }
+  
+  
+  func linkBuilder<Content: View>(
+    for restaurant: RestaurantDomainModel,
+    @ViewBuilder content: () -> Content
+  ) -> some View {
+    NavigationLink(destination: HomeRouter().makeDetailView(for: restaurant)) { content() }
+  }
+  
 }
-
-//struct FavoriteView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    FavoriteView()
-//  }
-//}

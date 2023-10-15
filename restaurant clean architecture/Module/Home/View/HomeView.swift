@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Core
+import Restaurant
 
 struct HomeView: View {
   
-  @ObservedObject var presenter: HomePresenter
+  @ObservedObject var presenter: GetListPresenter<
+    Any,
+    RestaurantDomainModel, Interactor<Any, [RestaurantDomainModel], GetRestaurantsRepository<GetRestaurantsLocaleDataSource, GetRestaurantsRemoteDataSource, RestaurantTransformer>>>
   
   var body: some View {
     ZStack {
@@ -17,14 +21,14 @@ struct HomeView: View {
         loadingIndicator
       } else if presenter.isError {
         errorIndicator
-      } else if presenter.restaurants.isEmpty {
+      } else if presenter.list.isEmpty {
         emptyRestaurants
       } else {
         content
       }
     }.onAppear {
-      if self.presenter.restaurants.count == 0 {
-        self.presenter.getRestaurants()
+      if self.presenter.list.count == 0 {
+        self.presenter.getList(request: nil )
       }
     }.navigationBarTitle(
       Text("Restaurants App"),
@@ -63,10 +67,10 @@ extension HomeView {
   var content: some View {
     ScrollView(.vertical, showsIndicators: false) {
       ForEach(
-        self.presenter.restaurants,
+        self.presenter.list,
         id: \.id
       ) { restaurant in
-        self.presenter.linkBuilder(for: restaurant) {
+        linkBuilder(for: restaurant) {
           VStack {
             RestaurantRow(restaurant: restaurant)
             Spacer()
@@ -76,11 +80,12 @@ extension HomeView {
       }
     }
   }
-}
-
-
-struct HomeView_Previews: PreviewProvider {
-  static var previews: some View {
-    HomeView(presenter: HomePresenter(homeUseCase: Injection.init().provideHome()))
+  
+  func linkBuilder<Content: View>(
+    for restaurant: RestaurantDomainModel,
+    @ViewBuilder content: () -> Content
+  ) -> some View {
+    NavigationLink(destination: HomeRouter().makeDetailView(for: restaurant)) { content() }
   }
+  
 }

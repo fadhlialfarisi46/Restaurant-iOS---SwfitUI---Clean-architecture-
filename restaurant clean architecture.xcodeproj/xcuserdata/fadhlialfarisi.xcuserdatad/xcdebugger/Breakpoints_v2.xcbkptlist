@@ -14,8 +14,8 @@
             filePath = "restaurant clean architecture/Module/Home/Presenter/HomePresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "getRestaurants()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,26 +30,42 @@
             filePath = "restaurant clean architecture/Core/Domain/UseCase/DetailInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "DetailInteractor"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B300551F-EAAD-4166-83CA-8E4980F54327"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "restaurant clean architecture/Module/Detail/View/DetailView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "imageWithFavIcon"
-            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "66004DCE-2F56-41B0-ACDC-2848AE102713 - 9db3e6d3c0497653"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "restaurant_clean_architecture.DetailInteractor.__allocating_init(repository: restaurant_clean_architecture.RestaurantRepositoryProtocol, restaurant: restaurant_clean_architecture.RestaurantModel) -&gt; restaurant_clean_architecture.DetailInteractor"
+                  moduleName = "restaurant clean architecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fadhlialfarisi/iOS%20Project/restaurant%20clean%20architecture/restaurant%20clean%20architecture/Core/Domain/UseCase/DetailInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "66004DCE-2F56-41B0-ACDC-2848AE102713 - bd100eefafd09e12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "restaurant_clean_architecture.DetailInteractor.init(repository: restaurant_clean_architecture.RestaurantRepositoryProtocol, restaurant: restaurant_clean_architecture.RestaurantModel) -&gt; restaurant_clean_architecture.DetailInteractor"
+                  moduleName = "restaurant clean architecture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fadhlialfarisi/iOS%20Project/restaurant%20clean%20architecture/restaurant%20clean%20architecture/Core/Domain/UseCase/DetailInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,26 +78,10 @@
             filePath = "restaurant clean architecture/Module/Detail/Presenter/DetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "init(detailUseCase:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "87F72745-6B7A-46F3-8087-BC1504B1A041"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "restaurant clean architecture/Module/Detail/View/DetailView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "imageWithFavIcon"
-            landmarkType = "24">
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

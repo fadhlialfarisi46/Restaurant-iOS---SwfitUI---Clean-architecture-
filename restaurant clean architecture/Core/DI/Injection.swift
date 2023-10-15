@@ -7,31 +7,61 @@
 
 import Foundation
 import RealmSwift
+import Core
+import Restaurant
+import UIKit
 
 final class Injection: NSObject {
   
-  private func provideRepository() -> RestaurantRepositoryProtocol {
-    let realm = try? Realm()
+  private let realm = try? Realm()
+  
+  func provideHome<U: UseCase>() -> U where U.Request == Any, U.Response == [RestaurantDomainModel] {
     
-    let locale: LocaleDataSource = LocaleDataSource.sharedInstance(realm)
-    let remote: RemoteDataSource = RemoteDataSource.sharedInstance
+    let locale = GetRestaurantsLocaleDataSource(realm: realm!)
     
-    return RestaurantRepository.sharedInstance(locale, remote)
+    let remote = GetRestaurantsRemoteDataSource(endpoint: EndPoints.Gets.restaurants.url)
+    
+    let mapper = RestaurantTransformer()
+    
+    let repository = GetRestaurantsRepository(localeDataSource: locale, remoteDataSource: remote, mapper: mapper)
+    
+    return Interactor(repository: repository) as! U
+    
   }
   
-  func provideHome() -> HomeUseCase {
-    let repository = provideRepository()
-    return HomeInteractor(repository: repository)
+  func provideFavorite<U: UseCase>() -> U where U.Request == String, U.Response == [RestaurantDomainModel] {
+    
+    let locale = GetFavoriteRestaurantsLocalDataSource(realm: realm!)
+        
+    let mapper = RestaurantTransformer()
+    
+    let repository = GetFavoriteRestaurantsRepository(localeDataSource: locale, mapper: mapper)
+    
+    return Interactor(repository: repository) as! U
+    
   }
   
-  func provideDetail(detailRestaurant: RestaurantModel) -> DetailUseCase {
-    let repository = provideRepository()
-    return DetailInteractor(repository: repository, restaurant: detailRestaurant)
+  func provideDetail<U: UseCase>() -> U where U.Request == String, U.Response == DetailRestaurantModel {
+    
+    let remote = GetRestaurantByIdRemoteDataSource(endpoint: EndPoints.Gets.detailRestaurant.url)
+    
+    let mapper = RestaurantTransformer()
+    
+    let repository = GetDetailRestaurantRepository(remoteDataSource: remote, mapper: mapper)
+    
+    return Interactor(repository: repository) as! U
+    
   }
   
-  func provideFavorite() -> FavoriteUseCase {
-    let repository = provideRepository()
-    return FavoriteInteractor(repository: repository)
+  func provideUpdateFavorite<U: UseCase>() -> U where U.Request == String, U.Response == RestaurantDomainModel {
+    
+    let locale = GetFavoriteRestaurantsLocalDataSource(realm: realm!)
+    
+    let mapper = RestaurantTransformer()
+    
+    let repository = UpdateFavoriteRestaurantRepository(localeDataSource: locale, mapper: mapper)
+    
+    return Interactor(repository: repository) as! U
   }
   
 }

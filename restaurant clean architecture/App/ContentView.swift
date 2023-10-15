@@ -6,37 +6,41 @@
 //
 
 import SwiftUI
+import Core
+import Restaurant
+import Profile
 
 struct ContentView: View {
-  @EnvironmentObject var homePresenter: HomePresenter
-  @EnvironmentObject var favoritePresenter: FavoritePresenter
+  @EnvironmentObject var homePresenter: GetListPresenter<
+    Any,
+    RestaurantDomainModel, Interactor<Any, [RestaurantDomainModel], GetRestaurantsRepository<GetRestaurantsLocaleDataSource, GetRestaurantsRemoteDataSource, RestaurantTransformer>>>
+  
+  @EnvironmentObject var favoritePresenter:
+  GetListPresenter<
+    String,
+    RestaurantDomainModel, Interactor<String, [RestaurantDomainModel], GetFavoriteRestaurantsRepository<GetFavoriteRestaurantsLocalDataSource, RestaurantTransformer>>>
   
   var body: some View {
-    TabView {
-      NavigationStack {
-        TabView {
+    NavigationStack {
+      TabView {
+        NavigationView{
           HomeView(presenter: homePresenter)
-            .tabItem {
-              Label("Home", systemImage: "house")
-            }
-          
+        }.tabItem {
+          Label("Home", systemImage: "house")
+        }
+        
+        NavigationView {
           FavoriteView(presenter: favoritePresenter)
-            .tabItem {
-              Label("Favorite", systemImage: "star.fill")
-            }
-          
+        }.tabItem {
+          Label("Favorite", systemImage: "star.fill")
+        }
+        
+        NavigationView {
           ProfileView()
-            .tabItem {
-              Label("My Profile", systemImage: "person")
-            }
+        }.tabItem {
+          Label("My Profile", systemImage: "person")
         }
       }
     }
-  }
-}
-
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
   }
 }
