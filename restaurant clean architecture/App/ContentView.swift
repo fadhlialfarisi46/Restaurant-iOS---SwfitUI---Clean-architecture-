@@ -8,7 +8,6 @@
 import SwiftUI
 import Core
 import Restaurant
-import Profile
 
 struct ContentView: View {
   @EnvironmentObject var homePresenter: GetListPresenter<
