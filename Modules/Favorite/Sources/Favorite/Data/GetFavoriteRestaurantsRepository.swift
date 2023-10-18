@@ -7,6 +7,7 @@
 
 import Core
 import Combine
+import Restaurant
 
 public struct GetFavoriteRestaurantsRepository<
   GetFavoriteRestaurantsLocalDataSource: LocaleDataSource,
@@ -33,7 +34,6 @@ Transformer.Domains == [RestaurantDomainModel] {
   }
   
   public func execute(request: String?) -> AnyPublisher<[RestaurantDomainModel], Error> {
-    print("get repo called")
 
     return self.localeDataSource.list(request: request)
       .map { self.mapper.transformEntityToDomain(entity: $0)}
