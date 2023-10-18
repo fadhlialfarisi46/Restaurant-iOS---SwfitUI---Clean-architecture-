@@ -8,6 +8,7 @@
 import SwiftUI
 import Restaurant
 import Core
+import Favorite
 
 struct DetailView: View {
   

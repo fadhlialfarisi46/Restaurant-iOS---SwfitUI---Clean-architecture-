@@ -10,6 +10,7 @@ import RealmSwift
 import Core
 import Restaurant
 import UIKit
+import Favorite
 
 final class Injection: NSObject {
   

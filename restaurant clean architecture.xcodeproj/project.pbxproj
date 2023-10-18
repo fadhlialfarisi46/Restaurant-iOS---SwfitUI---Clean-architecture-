@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		061A6D272ADC075300B7AC8C /* RestaurantRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061A6D262ADC075300B7AC8C /* RestaurantRow.swift */; };
 		061A6D2E2ADC090200B7AC8C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061A6D2D2ADC090200B7AC8C /* ProfileView.swift */; };
+		061A6D322ADED83500B7AC8C /* Favorite in Frameworks */ = {isa = PBXBuildFile; productRef = 061A6D312ADED83500B7AC8C /* Favorite */; };
 		0620B26D2ADAB8E300389D13 /* Restaurant in Frameworks */ = {isa = PBXBuildFile; productRef = 0620B26C2ADAB8E300389D13 /* Restaurant */; };
 		0639CA9A2ACDB41000EE8CBF /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CA992ACDB41000EE8CBF /* DetailPresenter.swift */; };
 		0639CA9E2ACDB97300EE8CBF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CA9D2ACDB97300EE8CBF /* DetailView.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		061A6D262ADC075300B7AC8C /* RestaurantRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRow.swift; sourceTree = "<group>"; };
 		061A6D2D2ADC090200B7AC8C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		061A6D302ADECEF300B7AC8C /* Favorite */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Favorite; path = Modules/Favorite; sourceTree = "<group>"; };
 		0620B2692ADA781300389D13 /* Restaurant */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Restaurant; path = Modules/Restaurant; sourceTree = "<group>"; };
 		0639CA992ACDB41000EE8CBF /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		0639CA9D2ACDB97300EE8CBF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			files = (
 				0669A7072ACB002E006D2C18 /* RealmSwift in Frameworks */,
 				0669A7052ACB002E006D2C18 /* Realm in Frameworks */,
+				061A6D322ADED83500B7AC8C /* Favorite in Frameworks */,
 				0620B26D2ADAB8E300389D13 /* Restaurant in Frameworks */,
 				0669A7022ACAFB26006D2C18 /* Alamofire in Frameworks */,
 				06FDC0AB2AD9922B00EF495D /* Core in Frameworks */,
@@ -289,6 +292,7 @@
 			children = (
 				06FDC0A82AD8CD1200EF495D /* Core */,
 				0620B2692ADA781300389D13 /* Restaurant */,
+				061A6D302ADECEF300B7AC8C /* Favorite */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -351,6 +355,7 @@
 				0669A7062ACB002E006D2C18 /* RealmSwift */,
 				06FDC0AA2AD9922B00EF495D /* Core */,
 				0620B26C2ADAB8E300389D13 /* Restaurant */,
+				061A6D312ADED83500B7AC8C /* Favorite */,
 			);
 			productName = "restaurant clean architecture";
 			productReference = 0669A6EA2ACAF5F7006D2C18 /* restaurant clean architecture.app */;
@@ -757,6 +762,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		061A6D312ADED83500B7AC8C /* Favorite */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Favorite;
+		};
 		0620B26C2ADAB8E300389D13 /* Restaurant */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Restaurant;

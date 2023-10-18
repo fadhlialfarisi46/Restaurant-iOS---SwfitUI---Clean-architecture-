@@ -8,6 +8,7 @@
 import Core
 import Combine
 import RealmSwift
+import Restaurant
 
 public struct GetFavoriteRestaurantsLocalDataSource : LocaleDataSource {
   
