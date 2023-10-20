@@ -14,8 +14,8 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-      .package(url: "https://github.com/realm/realm-swift.git", branch: "master"),
-      .package(path: "../Core"),
+      .package(url: "https://github.com/realm/realm-swift.git", .upToNextMajor(from: "10.43.1")),
+      .package(url: "https://github.com/fadhlialfarisi46/Core.git", branch: "main"),
       .package(path: "../Restaurant")
     ],
     targets: [
@@ -24,7 +24,8 @@ let package = Package(
         .target(
             name: "Favorite",
             dependencies: [.product(name: "RealmSwift", package: "realm-swift"),
-                           "Core", "Restaurant"
+                           "Core",
+                           "Restaurant"
                           ]),
         .testTarget(
             name: "FavoriteTests",

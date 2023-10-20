@@ -16,17 +16,17 @@
 		0639CAA92AD03EBC00EE8CBF /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAA82AD03EBC00EE8CBF /* FavoriteRouter.swift */; };
 		0639CAAD2AD03ED500EE8CBF /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAAC2AD03ED500EE8CBF /* FavoriteView.swift */; };
 		0639CAC22AD6F68200EE8CBF /* restaurant_clean_architectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAC12AD6F68200EE8CBF /* restaurant_clean_architectureTests.swift */; };
+		064EC0EC2AE2AB3A00483E6D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 064EC0EB2AE2AB3A00483E6D /* Realm */; };
+		064EC0EE2AE2AB3A00483E6D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 064EC0ED2AE2AB3A00483E6D /* RealmSwift */; };
 		0669A6EE2ACAF5F7006D2C18 /* RestaurantCleanArchitectureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669A6ED2ACAF5F7006D2C18 /* RestaurantCleanArchitectureApp.swift */; };
 		0669A6F02ACAF5F7006D2C18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669A6EF2ACAF5F7006D2C18 /* ContentView.swift */; };
 		0669A6F22ACAF5F8006D2C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0669A6F12ACAF5F8006D2C18 /* Assets.xcassets */; };
 		0669A6F52ACAF5F8006D2C18 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0669A6F42ACAF5F8006D2C18 /* Preview Assets.xcassets */; };
 		0669A7022ACAFB26006D2C18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0669A7012ACAFB26006D2C18 /* Alamofire */; };
-		0669A7052ACB002E006D2C18 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0669A7042ACB002E006D2C18 /* Realm */; };
-		0669A7072ACB002E006D2C18 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0669A7062ACB002E006D2C18 /* RealmSwift */; };
 		0669A7212ACB100D006D2C18 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669A7202ACB100C006D2C18 /* Injection.swift */; };
 		0669A72D2ACB9FD7006D2C18 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669A72C2ACB9FD7006D2C18 /* HomeRouter.swift */; };
 		0669A72F2ACBA0B9006D2C18 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669A72E2ACBA0B9006D2C18 /* HomeView.swift */; };
-		06FDC0AB2AD9922B00EF495D /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 06FDC0AA2AD9922B00EF495D /* Core */; };
+		06DF794A2AE2B0100011A538 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 06DF79492AE2B0100011A538 /* Core */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,6 @@
 		0669A7202ACB100C006D2C18 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		0669A72C2ACB9FD7006D2C18 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		0669A72E2ACBA0B9006D2C18 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		06FDC0A82AD8CD1200EF495D /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Core; path = Modules/Core; sourceTree = "<group>"; };
 		4CBB2BAF8F9C9C57BC02B1B3 /* Pods-restaurant clean architecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-restaurant clean architecture.release.xcconfig"; path = "Target Support Files/Pods-restaurant clean architecture/Pods-restaurant clean architecture.release.xcconfig"; sourceTree = "<group>"; };
 		A5AE2C02D178DB80F51CA416 /* Pods-restaurant clean architecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-restaurant clean architecture.debug.xcconfig"; path = "Target Support Files/Pods-restaurant clean architecture/Pods-restaurant clean architecture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,12 +88,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0669A7072ACB002E006D2C18 /* RealmSwift in Frameworks */,
-				0669A7052ACB002E006D2C18 /* Realm in Frameworks */,
+				064EC0EC2AE2AB3A00483E6D /* Realm in Frameworks */,
 				061A6D322ADED83500B7AC8C /* Favorite in Frameworks */,
+				064EC0EE2AE2AB3A00483E6D /* RealmSwift in Frameworks */,
 				0620B26D2ADAB8E300389D13 /* Restaurant in Frameworks */,
 				0669A7022ACAFB26006D2C18 /* Alamofire in Frameworks */,
-				06FDC0AB2AD9922B00EF495D /* Core in Frameworks */,
+				06DF794A2AE2B0100011A538 /* Core in Frameworks */,
 				061A6D352AE02C5000B7AC8C /* Detail in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +281,6 @@
 		06FDC0A72AD8CD1200EF495D /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				06FDC0A82AD8CD1200EF495D /* Core */,
 				0620B2692ADA781300389D13 /* Restaurant */,
 				061A6D302ADECEF300B7AC8C /* Favorite */,
 				061A6D332AE02C4600B7AC8C /* Detail */,
@@ -344,12 +342,12 @@
 			name = "restaurant clean architecture";
 			packageProductDependencies = (
 				0669A7012ACAFB26006D2C18 /* Alamofire */,
-				0669A7042ACB002E006D2C18 /* Realm */,
-				0669A7062ACB002E006D2C18 /* RealmSwift */,
-				06FDC0AA2AD9922B00EF495D /* Core */,
 				0620B26C2ADAB8E300389D13 /* Restaurant */,
 				061A6D312ADED83500B7AC8C /* Favorite */,
 				061A6D342AE02C5000B7AC8C /* Detail */,
+				064EC0EB2AE2AB3A00483E6D /* Realm */,
+				064EC0ED2AE2AB3A00483E6D /* RealmSwift */,
+				06DF79492AE2B0100011A538 /* Core */,
 			);
 			productName = "restaurant clean architecture";
 			productReference = 0669A6EA2ACAF5F7006D2C18 /* restaurant clean architecture.app */;
@@ -389,6 +387,7 @@
 			packageReferences = (
 				0669A7002ACAFB26006D2C18 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				0669A7032ACB002E006D2C18 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				06DF79482AE2B0100011A538 /* XCRemoteSwiftPackageReference "Core" */,
 			);
 			productRefGroup = 0669A6EB2ACAF5F7006D2C18 /* Products */;
 			projectDirPath = "";
@@ -748,7 +747,15 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
 			requirement = {
-				branch = master;
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.43.1;
+			};
+		};
+		06DF79482AE2B0100011A538 /* XCRemoteSwiftPackageReference "Core" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fadhlialfarisi46/Core.git";
+			requirement = {
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -767,23 +774,24 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Restaurant;
 		};
+		064EC0EB2AE2AB3A00483E6D /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0669A7032ACB002E006D2C18 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		064EC0ED2AE2AB3A00483E6D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0669A7032ACB002E006D2C18 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		0669A7012ACAFB26006D2C18 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0669A7002ACAFB26006D2C18 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		0669A7042ACB002E006D2C18 /* Realm */ = {
+		06DF79492AE2B0100011A538 /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0669A7032ACB002E006D2C18 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		0669A7062ACB002E006D2C18 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0669A7032ACB002E006D2C18 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-		06FDC0AA2AD9922B00EF495D /* Core */ = {
-			isa = XCSwiftPackageProductDependency;
+			package = 06DF79482AE2B0100011A538 /* XCRemoteSwiftPackageReference "Core" */;
 			productName = Core;
 		};
 /* End XCSwiftPackageProductDependency section */
