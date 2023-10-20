@@ -9,6 +9,7 @@ import SwiftUI
 import Restaurant
 import Core
 import Favorite
+import Detail
 
 struct DetailView: View {
   
@@ -18,14 +19,14 @@ struct DetailView: View {
       DetailRestaurantModel,
       GetDetailRestaurantRepository<
         GetRestaurantByIdRemoteDataSource,
-        RestaurantTransformer
+        DetailRestaurantTransformer
       >>,
     Interactor<
       String,
       RestaurantDomainModel,
       UpdateFavoriteRestaurantRepository<
         GetFavoriteRestaurantsLocalDataSource,
-        RestaurantTransformer
+        DetailRestaurantTransformer
       >>>
   
   var restaurant: RestaurantDomainModel

@@ -9,6 +9,7 @@ import SwiftUI
 import Restaurant
 import Core
 import Favorite
+import Detail
 
 class HomeRouter {
   
@@ -19,7 +20,7 @@ class HomeRouter {
       DetailRestaurantModel,
       GetDetailRestaurantRepository<
         GetRestaurantByIdRemoteDataSource,
-        RestaurantTransformer
+        DetailRestaurantTransformer
       >> = Injection.init().provideDetail()
     
     let favoriteUseCase: Interactor<
@@ -27,7 +28,7 @@ class HomeRouter {
       RestaurantDomainModel,
       UpdateFavoriteRestaurantRepository<
         GetFavoriteRestaurantsLocalDataSource,
-        RestaurantTransformer
+        DetailRestaurantTransformer
       >> = Injection.init().provideUpdateFavorite()
     
     let presenter = DetailPresenter(detailUseCase: detailUseCase, favoriteUseCase: favoriteUseCase)

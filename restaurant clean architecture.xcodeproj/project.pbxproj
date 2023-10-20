@@ -10,8 +10,8 @@
 		061A6D272ADC075300B7AC8C /* RestaurantRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061A6D262ADC075300B7AC8C /* RestaurantRow.swift */; };
 		061A6D2E2ADC090200B7AC8C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061A6D2D2ADC090200B7AC8C /* ProfileView.swift */; };
 		061A6D322ADED83500B7AC8C /* Favorite in Frameworks */ = {isa = PBXBuildFile; productRef = 061A6D312ADED83500B7AC8C /* Favorite */; };
+		061A6D352AE02C5000B7AC8C /* Detail in Frameworks */ = {isa = PBXBuildFile; productRef = 061A6D342AE02C5000B7AC8C /* Detail */; };
 		0620B26D2ADAB8E300389D13 /* Restaurant in Frameworks */ = {isa = PBXBuildFile; productRef = 0620B26C2ADAB8E300389D13 /* Restaurant */; };
-		0639CA9A2ACDB41000EE8CBF /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CA992ACDB41000EE8CBF /* DetailPresenter.swift */; };
 		0639CA9E2ACDB97300EE8CBF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CA9D2ACDB97300EE8CBF /* DetailView.swift */; };
 		0639CAA92AD03EBC00EE8CBF /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAA82AD03EBC00EE8CBF /* FavoriteRouter.swift */; };
 		0639CAAD2AD03ED500EE8CBF /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639CAAC2AD03ED500EE8CBF /* FavoriteView.swift */; };
@@ -56,8 +56,8 @@
 		061A6D262ADC075300B7AC8C /* RestaurantRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRow.swift; sourceTree = "<group>"; };
 		061A6D2D2ADC090200B7AC8C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		061A6D302ADECEF300B7AC8C /* Favorite */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Favorite; path = Modules/Favorite; sourceTree = "<group>"; };
+		061A6D332AE02C4600B7AC8C /* Detail */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Detail; path = Modules/Detail; sourceTree = "<group>"; };
 		0620B2692ADA781300389D13 /* Restaurant */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Restaurant; path = Modules/Restaurant; sourceTree = "<group>"; };
-		0639CA992ACDB41000EE8CBF /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		0639CA9D2ACDB97300EE8CBF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0639CAA82AD03EBC00EE8CBF /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
 		0639CAAC2AD03ED500EE8CBF /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
@@ -95,6 +95,7 @@
 				0620B26D2ADAB8E300389D13 /* Restaurant in Frameworks */,
 				0669A7022ACAFB26006D2C18 /* Alamofire in Frameworks */,
 				06FDC0AB2AD9922B00EF495D /* Core in Frameworks */,
+				061A6D352AE02C5000B7AC8C /* Detail in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +113,6 @@
 		0639CA8B2ACDA31A00EE8CBF /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				0639CA8E2ACDA33400EE8CBF /* Presenter */,
 				0639CA8C2ACDA32700EE8CBF /* View */,
 			);
 			path = Detail;
@@ -124,14 +124,6 @@
 				0639CA9D2ACDB97300EE8CBF /* DetailView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		0639CA8E2ACDA33400EE8CBF /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				0639CA992ACDB41000EE8CBF /* DetailPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		0639CAA42AD03E7100EE8CBF /* Favorite */ = {
@@ -293,6 +285,7 @@
 				06FDC0A82AD8CD1200EF495D /* Core */,
 				0620B2692ADA781300389D13 /* Restaurant */,
 				061A6D302ADECEF300B7AC8C /* Favorite */,
+				061A6D332AE02C4600B7AC8C /* Detail */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -356,6 +349,7 @@
 				06FDC0AA2AD9922B00EF495D /* Core */,
 				0620B26C2ADAB8E300389D13 /* Restaurant */,
 				061A6D312ADED83500B7AC8C /* Favorite */,
+				061A6D342AE02C5000B7AC8C /* Detail */,
 			);
 			productName = "restaurant clean architecture";
 			productReference = 0669A6EA2ACAF5F7006D2C18 /* restaurant clean architecture.app */;
@@ -469,7 +463,6 @@
 				0669A6F02ACAF5F7006D2C18 /* ContentView.swift in Sources */,
 				0669A72D2ACB9FD7006D2C18 /* HomeRouter.swift in Sources */,
 				061A6D272ADC075300B7AC8C /* RestaurantRow.swift in Sources */,
-				0639CA9A2ACDB41000EE8CBF /* DetailPresenter.swift in Sources */,
 				0639CAAD2AD03ED500EE8CBF /* FavoriteView.swift in Sources */,
 				0639CAA92AD03EBC00EE8CBF /* FavoriteRouter.swift in Sources */,
 				061A6D2E2ADC090200B7AC8C /* ProfileView.swift in Sources */,
@@ -765,6 +758,10 @@
 		061A6D312ADED83500B7AC8C /* Favorite */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Favorite;
+		};
+		061A6D342AE02C5000B7AC8C /* Detail */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Detail;
 		};
 		0620B26C2ADAB8E300389D13 /* Restaurant */ = {
 			isa = XCSwiftPackageProductDependency;

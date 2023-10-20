@@ -9,7 +9,7 @@ import Core
 
 public struct RestaurantTransformer: Mapper {
   
-  public typealias DetailResponse = DetailRestaurantResponse
+  public typealias DetailResponse = RestaurantResponse
     
   public typealias Response = [RestaurantResponse]
   
@@ -18,7 +18,7 @@ public struct RestaurantTransformer: Mapper {
   
   public typealias Domains = [RestaurantDomainModel]
   public typealias Domain = RestaurantDomainModel
-  public typealias DetailDomain = DetailRestaurantModel
+  public typealias DetailDomain = RestaurantDomainModel
   
   public init() {}
 
@@ -58,33 +58,7 @@ public struct RestaurantTransformer: Mapper {
     )
   }
   
-  public func transformDetailRestaurantResponseToDomain(detailResponse result: DetailRestaurantResponse) ->
-  DetailRestaurantModel {
-    
-    let categories = result.categories.map { category in
-      CategoryModel(name: category.name)
-    }
-    
-    let foods = result.menus.foods.map { food in
-      CategoryModel(name: food.name)
-    }
-    let drinks = result.menus.drinks.map { drink in
-      CategoryModel(name: drink.name)
-    }
-    
-    let menus = MenusModel(foods: foods, drinks: drinks)
-    
-    return DetailRestaurantModel(
-      id: result.id,
-      name: result.name,
-      description: result.description,
-      city: result.city,
-      address: result.address,
-      pictureId: result.pictureId,
-      categories: categories,
-      menus: menus,
-      rating: result.rating
-    )
+  public func transformDetailRestaurantResponseToDomain(detailResponse: RestaurantResponse) -> RestaurantDomainModel {
+    RestaurantDomainModel(id: "", name: "", pictureId: "", rating: 0, city: "", isFavorite: false)
   }
-  
 }

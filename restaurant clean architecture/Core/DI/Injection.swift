@@ -11,6 +11,7 @@ import Core
 import Restaurant
 import UIKit
 import Favorite
+import Detail
 
 final class Injection: NSObject {
   
@@ -46,7 +47,7 @@ final class Injection: NSObject {
     
     let remote = GetRestaurantByIdRemoteDataSource(endpoint: EndPoints.Gets.detailRestaurant.url)
     
-    let mapper = RestaurantTransformer()
+    let mapper = DetailRestaurantTransformer()
     
     let repository = GetDetailRestaurantRepository(remoteDataSource: remote, mapper: mapper)
     
@@ -58,7 +59,7 @@ final class Injection: NSObject {
     
     let locale = GetFavoriteRestaurantsLocalDataSource(realm: realm!)
     
-    let mapper = RestaurantTransformer()
+    let mapper = DetailRestaurantTransformer()
     
     let repository = UpdateFavoriteRestaurantRepository(localeDataSource: locale, mapper: mapper)
     

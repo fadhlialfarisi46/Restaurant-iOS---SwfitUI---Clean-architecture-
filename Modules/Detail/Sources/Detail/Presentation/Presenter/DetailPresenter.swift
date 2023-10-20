@@ -10,7 +10,7 @@ import Combine
 import Restaurant
 import Core
 
-class DetailPresenter<
+public class DetailPresenter<
   DetailUseCase: UseCase,
   FavoriteUseCase: UseCase
 >: ObservableObject  where
@@ -24,18 +24,18 @@ FavoriteUseCase.Response == RestaurantDomainModel
   private let detailUseCase: DetailUseCase
   private let favoriteUseCase: FavoriteUseCase
   
-  @Published var restaurant: RestaurantDomainModel?
-  @Published var detailRestaurant: DetailRestaurantModel?
-  @Published var errorMessage: String = ""
-  @Published var isLoading: Bool = false
-  @Published var isError: Bool = false
+  @Published public var restaurant: RestaurantDomainModel?
+  @Published public var detailRestaurant: DetailRestaurantModel?
+  @Published public var errorMessage: String = ""
+  @Published public var isLoading: Bool = false
+  @Published public var isError: Bool = false
   
-  init(detailUseCase: DetailUseCase, favoriteUseCase: FavoriteUseCase) {
+  public init(detailUseCase: DetailUseCase, favoriteUseCase: FavoriteUseCase) {
     self.detailUseCase = detailUseCase
     self.favoriteUseCase = favoriteUseCase
   }
   
-  func getDetailRestaurant(request: DetailUseCase.Request) {
+  public func getDetailRestaurant(request: DetailUseCase.Request) {
     isLoading = true
     detailUseCase.execute(request: request)
       .receive(on: RunLoop.main)
@@ -54,7 +54,7 @@ FavoriteUseCase.Response == RestaurantDomainModel
       .store(in: &cancellables)
   }
   
-  func updateFavoriteRestaurant(request: FavoriteUseCase.Request) {
+  public func updateFavoriteRestaurant(request: FavoriteUseCase.Request) {
     print("presenter called")
     favoriteUseCase.execute(request: request)
       .receive(on: RunLoop.main)
@@ -71,7 +71,7 @@ FavoriteUseCase.Response == RestaurantDomainModel
       .store(in: &cancellables)
   }
   
-  func setInitRestaurant(restaurant: RestaurantDomainModel) {
+  public func setInitRestaurant(restaurant: RestaurantDomainModel) {
     self.restaurant = restaurant
   }
   
