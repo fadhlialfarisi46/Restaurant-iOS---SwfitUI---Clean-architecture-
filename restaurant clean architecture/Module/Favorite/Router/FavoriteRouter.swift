@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import Restaurant
+import Core
+import Favorite
+import Detail
 
 class FavoriteRouter {
   
-  func makeDetailView(for restaurant: RestaurantModel) -> some View {
-    let detailUseCase = Injection.init().provideDetail(detailRestaurant: restaurant)
-    let presenter = DetailPresenter(detailUseCase: detailUseCase)
-    return DetailView(presenter: presenter)
+  func makeDetailView(for restaurant: RestaurantDomainModel) -> some View {
+    
+    let presenter = DetailPresenterMain(detailUseCase: detailUseCase, favoriteUseCase: updateFavoriteUseCase)
+    return DetailView(presenter: presenter, restaurant: restaurant)
   }
   
 }

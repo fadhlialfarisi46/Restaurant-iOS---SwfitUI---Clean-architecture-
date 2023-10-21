@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Restaurant
 
 struct RestaurantRow: View {
   
-  var restaurant: RestaurantModel
+  var restaurant: RestaurantDomainModel
   
   var baseImgUrl = "https://restaurant-api.dicoding.dev/images/medium/"
   
@@ -71,8 +72,8 @@ extension RestaurantRow {
   }
 }
 
-struct RestaurantRow_Previews: PreviewProvider {
-  static var previews: some View {
-    RestaurantRow(restaurant: RestaurantModel(id: "1", name: "Halal bro", pictureId: "22", rating: 5.0, city: "Jakarta"))
-  }
-}
+//struct RestaurantRow_Previews: PreviewProvider {
+//  static var previews: some View {
+//    RestaurantRow(restaurant: RestaurantModel(id: "1", name: "Halal bro", pictureId: "22", rating: 5.0, city: "Jakarta"))
+//  }
+//}

@@ -10,21 +10,30 @@
       }
     },
     {
+      "identity" : "core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fadhlialfarisi46/Core.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "53a87c9701b7b490c47fe1afa017a31aa2f9259d"
+      }
+    },
+    {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core.git",
       "state" : {
-        "revision" : "e836317e8238bd32f06086dd7ce6768ef574beb6",
-        "version" : "13.22.0"
+        "revision" : "c569bec4d04da84030d94f376437bc4efda3686b",
+        "version" : "13.23.1"
       }
     },
     {
       "identity" : "realm-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/realm/realm-swift",
+      "location" : "https://github.com/realm/realm-swift.git",
       "state" : {
         "branch" : "master",
-        "revision" : "8249489f28d36f9f37ed076c95029059c60b556d"
+        "revision" : "f485d2a3bbfaf92186c52ff6d7fa32c924338cf2"
       }
     }
   ],

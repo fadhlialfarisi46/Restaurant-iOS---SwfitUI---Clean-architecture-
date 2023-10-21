@@ -6,10 +6,32 @@
 //
 
 import SwiftUI
+import Restaurant
+import Core
+import Favorite
+import Detail
+
+typealias DetailPresenterMain = DetailPresenter<
+  Interactor<
+    String,
+    DetailRestaurantModel,
+    GetDetailRestaurantRepository<
+      GetRestaurantByIdRemoteDataSource,
+      DetailRestaurantTransformer
+    >>,
+  Interactor<
+    String,
+    RestaurantDomainModel,
+    UpdateFavoriteRestaurantRepository<
+      GetFavoriteRestaurantsLocalDataSource,
+      DetailRestaurantTransformer
+    >>>
 
 struct DetailView: View {
   
-  @ObservedObject var presenter: DetailPresenter
+  @ObservedObject var presenter: DetailPresenterMain
+  
+  var restaurant: RestaurantDomainModel
   
   var baseImgUrl = "https://restaurant-api.dicoding.dev/images/medium/"
   
@@ -23,7 +45,8 @@ struct DetailView: View {
         }
       }
     }.onAppear {
-      self.presenter.getDetailRestaurant()
+      self.presenter.getDetailRestaurant(request: restaurant.id)
+      self.presenter.setInitRestaurant(restaurant: restaurant)
     }
   }
 }
@@ -55,45 +78,47 @@ extension DetailView {
   
   
   var imageWithFavIcon: some View {
-      AsyncImage(url: URL(string:  baseImgUrl + (presenter.detailRestaurant?.pictureId ?? "14"))) { image in
-        ZStack(alignment: .bottomTrailing) {
-          image.resizable()
-            .scaledToFill()
-            .frame(width: UIScreen.main.bounds.width, height: 300)
-          
-          if presenter.restaurant?.isFavorite == true {
-            Circle()
-              .fill(Color.white)
-              .frame(width: 55, height: 55)
-              .overlay(
-                Image(systemName: "heart.fill")
-                  .font(.system(size: 40))
-                  .foregroundColor(.red)
-              )
-              .offset(x: -16, y: 25)
-              .onTapGesture {
-                self.presenter.updateFavoriteRestaurant()
-              }
-          } else {
-            Circle()
-              .fill(Color.white)
-              .frame(width: 55, height: 55)
-              .overlay(
-                Image(systemName: "heart")
-                  .font(.system(size: 40))
-                  .foregroundColor(.red)
-              )
-              .offset(x: -16, y: 25)
-              .onTapGesture {
-                self.presenter.updateFavoriteRestaurant()
-              }
-          }
+    AsyncImage(url: URL(string:  baseImgUrl + (presenter.detailRestaurant?.pictureId ?? "14"))) { image in
+      ZStack(alignment: .bottomTrailing) {
+        image.resizable()
+          .scaledToFill()
+          .frame(width: UIScreen.main.bounds.width, height: 300)
         
+        if presenter.restaurant?.isFavorite == true {
+          Circle()
+            .fill(Color.white)
+            .frame(width: 55, height: 55)
+            .overlay(
+              Image(systemName: "heart.fill")
+                .font(.system(size: 40))
+                .foregroundColor(.red)
+            )
+            .offset(x: -16, y: 25)
+            .onTapGesture {
+              print("gesture tap \(restaurant.id) true")
+              self.presenter.updateFavoriteRestaurant(request: restaurant.id)
+            }
+        } else {
+          Circle()
+            .fill(Color.white)
+            .frame(width: 55, height: 55)
+            .overlay(
+              Image(systemName: "heart")
+                .font(.system(size: 40))
+                .foregroundColor(.red)
+            )
+            .offset(x: -16, y: 25)
+            .onTapGesture {
+              print("gesture tap \(restaurant.id) false")
+              self.presenter.updateFavoriteRestaurant(request: restaurant.id)
+            }
         }
-      } placeholder: {
-        ProgressView()
-      }.frame(width: UIScreen.main.bounds.width, height: 324)
-
+        
+      }
+    } placeholder: {
+      ProgressView()
+    }.frame(width: UIScreen.main.bounds.width, height: 324)
+    
   }
   
   var cityAndRating: some View {
@@ -144,13 +169,5 @@ extension DetailView {
       titleSection: "Drinks",
       items: presenter.detailRestaurant?.menus.drinks.map { $0.name } ?? [],
       chipColor: Color.mint)
-  }
-}
-
-struct DetailView_Previews: PreviewProvider {
-  static var previews: some View {
-    let restaurant = RestaurantModel(id: "123", name: "ini restaurant", pictureId: "14", rating: 0.0, city: "Jakarta")
-
-    DetailView(presenter: DetailPresenter(detailUseCase: Injection.init().provideDetail(detailRestaurant: restaurant )))
   }
 }
