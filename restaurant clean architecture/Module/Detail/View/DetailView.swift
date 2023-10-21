@@ -11,23 +11,25 @@ import Core
 import Favorite
 import Detail
 
+typealias DetailPresenterMain = DetailPresenter<
+  Interactor<
+    String,
+    DetailRestaurantModel,
+    GetDetailRestaurantRepository<
+      GetRestaurantByIdRemoteDataSource,
+      DetailRestaurantTransformer
+    >>,
+  Interactor<
+    String,
+    RestaurantDomainModel,
+    UpdateFavoriteRestaurantRepository<
+      GetFavoriteRestaurantsLocalDataSource,
+      DetailRestaurantTransformer
+    >>>
+
 struct DetailView: View {
   
-  @ObservedObject var presenter: DetailPresenter<
-    Interactor<
-      String,
-      DetailRestaurantModel,
-      GetDetailRestaurantRepository<
-        GetRestaurantByIdRemoteDataSource,
-        DetailRestaurantTransformer
-      >>,
-    Interactor<
-      String,
-      RestaurantDomainModel,
-      UpdateFavoriteRestaurantRepository<
-        GetFavoriteRestaurantsLocalDataSource,
-        DetailRestaurantTransformer
-      >>>
+  @ObservedObject var presenter: DetailPresenterMain
   
   var restaurant: RestaurantDomainModel
   

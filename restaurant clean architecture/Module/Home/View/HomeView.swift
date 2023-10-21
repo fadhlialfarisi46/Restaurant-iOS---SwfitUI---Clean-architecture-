@@ -11,9 +11,7 @@ import Restaurant
 
 struct HomeView: View {
   
-  @ObservedObject var presenter: GetListPresenter<
-    Any,
-    RestaurantDomainModel, Interactor<Any, [RestaurantDomainModel], GetRestaurantsRepository<GetRestaurantsLocaleDataSource, GetRestaurantsRemoteDataSource, RestaurantTransformer>>>
+  @ObservedObject var presenter: HomePresenter
   
   var body: some View {
     ZStack {

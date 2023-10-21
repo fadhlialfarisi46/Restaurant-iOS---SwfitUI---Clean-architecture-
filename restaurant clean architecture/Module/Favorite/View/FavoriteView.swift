@@ -12,10 +12,7 @@ import Favorite
 
 struct FavoriteView: View {
   
-  @ObservedObject var presenter: GetListPresenter<
-    String,
-    RestaurantDomainModel, Interactor<String, [RestaurantDomainModel], GetFavoriteRestaurantsRepository<GetFavoriteRestaurantsLocalDataSource, RestaurantTransformer>>>
-  
+  @ObservedObject var presenter: FavoritePresenter
   
   var body: some View {
     ZStack {

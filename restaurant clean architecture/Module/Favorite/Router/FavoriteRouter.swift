@@ -15,23 +15,7 @@ class FavoriteRouter {
   
   func makeDetailView(for restaurant: RestaurantDomainModel) -> some View {
     
-    let detailUseCase: Interactor<
-      String,
-      DetailRestaurantModel,
-      GetDetailRestaurantRepository<
-        GetRestaurantByIdRemoteDataSource,
-        DetailRestaurantTransformer
-      >> = Injection.init().provideDetail()
-    
-    let favoriteUseCase: Interactor<
-      String,
-      RestaurantDomainModel,
-      UpdateFavoriteRestaurantRepository<
-        GetFavoriteRestaurantsLocalDataSource,
-        DetailRestaurantTransformer
-      >> = Injection.init().provideUpdateFavorite()
-    
-    let presenter = DetailPresenter(detailUseCase: detailUseCase, favoriteUseCase: favoriteUseCase)
+    let presenter = DetailPresenterMain(detailUseCase: detailUseCase, favoriteUseCase: updateFavoriteUseCase)
     return DetailView(presenter: presenter, restaurant: restaurant)
   }
   
