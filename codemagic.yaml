@@ -8,14 +8,6 @@ workflows:
           XCODE_PROJECT: "restaurant clean architecture.xcodeproj"
           XCODE_SCHEME: "restaurant clean architecture"
     scripts:
-      - name: Run tests
-        # script: | # tambahkan CODE_SIGNING_ALLOWED=NO pada script "Run Tests" atau kamu cukup menggunakan script "Build debug app"
-        #   xcodebuild \
-        #   -project "$XCODE_PROJECT" \
-        #   -scheme "$XCODE_SCHEME" \
-        #   -sdk iphonesimulator \
-        #   -destination 'platform=iOS Simulator,name=iPhone 12,OS=16.4' \
-        #   clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
       - name: Build debug app
         script: |
           xcodebuild build -project "$XCODE_PROJECT" \
