@@ -1,3 +1,5 @@
+[![Codemagic build status](https://api.codemagic.io/apps/65274c15722db48744b89c1a/ios-project-debug/status_badge.svg)](https://codemagic.io/apps/65274c15722db48744b89c1a/ios-project-debug/latest_build)
+
 # Restaurant-iOS---SwfitUI---Clean-architecture-
 The Restaurant iOS App is a SwiftUI-based mobile application designed to help users explore a curated list of restaurants in their area. Users can view a list of restaurants, read detailed information about each restaurant, and even save their favorite restaurants for future reference.
  
